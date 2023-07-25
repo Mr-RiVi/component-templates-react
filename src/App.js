@@ -3,27 +3,20 @@
     -yarn add @mui/material @emotion/react @emotion/styled
 */
 
-import { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import SelectMaterialUI from "./components/DropdownMenu/SelectMaterialUI";
 import SelectMultipleMaterialUI from "./components/DropdownMenu/SelectMultipleMaterialUI";
 
+import IndexRoutes from "./routes/IndexRoutes";
 import "./App.css";
-import { products } from "./utils/dropdownOptions";
 
 function App() {
-  const [x, setX] = useState();
-
   return (
     <div className="App">
-      <SelectMaterialUI
-        options={products}
-        label={"Level"}
-        onChange={selectedValue}
-      />
-      <p>
-        Selected {x} : <strong>{x}</strong>
-      </p>
-      <SelectMultipleMaterialUI options={products} label={"Product Names"} />
+      <BrowserRouter>
+        <IndexRoutes />
+      </BrowserRouter>
     </div>
   );
 }

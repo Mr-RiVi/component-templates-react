@@ -17,7 +17,7 @@ const SelectMaterialUI = ({ options, label, onChange }) => {
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
-    onChange(event.target.value);
+    onChange(selectedValue);
   };
 
   return (
@@ -41,11 +41,11 @@ const SelectMaterialUI = ({ options, label, onChange }) => {
           ))}
         </TextField>
       </Box>
-      <section>
+      {/* <section>
         <p>
           Selected {label} : <strong>{selectedValue}</strong>
         </p>
-      </section>
+      </section> */}
     </Box>
   );
 };
