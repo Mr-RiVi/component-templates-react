@@ -17,7 +17,7 @@ const SelectMaterialUI = ({ options, label, onChange }) => {
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
-    onChange(selectedValue);
+    onChange(event.target.value);
   };
 
   return (
