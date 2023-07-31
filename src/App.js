@@ -5,9 +5,6 @@
 
 import { BrowserRouter } from "react-router-dom";
 
-import SelectMaterialUI from "./components/DropdownMenu/SelectMaterialUI";
-import SelectMultipleMaterialUI from "./components/DropdownMenu/SelectMultipleMaterialUI";
-
 import IndexRoutes from "./routes/IndexRoutes";
 import "./App.css";
 

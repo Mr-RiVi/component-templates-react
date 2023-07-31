@@ -11,10 +11,15 @@ import { Box, Typography, TextField, MenuItem } from "@mui/material";
  * @returns {JSX.Element} - The rendered component.
  */
 
-const SelectMultipleMaterialUI = ({ options, label }) => {
+const SelectMultipleMaterialUI = ({ options, label, onChange }) => {
   //ProductName state should be an array,
   //Cz we have to store multiple values in this state
   const [selectedValues, setSelectedValues] = useState([]);
+
+  const handleChange = (e) => {
+    setSelectedValues(e.target.value);
+    onChange(e.target.value);
+  };
 
   return (
     <Box>
@@ -25,7 +30,7 @@ const SelectMultipleMaterialUI = ({ options, label }) => {
         <TextField
           label={label}
           value={selectedValues}
-          onChange={(e) => setSelectedValues(e.target.value)}
+          onChange={handleChange}
           select
           SelectProps={{ multiple: true }} // In here multiple attribute should be true if we choose multi values
           sx={{ width: "200px" }}
@@ -37,11 +42,11 @@ const SelectMultipleMaterialUI = ({ options, label }) => {
           ))}
         </TextField>
       </Box>
-      <section>
+      {/* <section>
         <p>
           Selected {label} : <strong>{selectedValues.join(",")}</strong>
         </p>
-      </section>
+      </section> */}
     </Box>
   );
 };
